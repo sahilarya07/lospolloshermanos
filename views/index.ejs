@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 0;
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #45a049;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .add-button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li a {
+      margin-left: 10px;
+      color: #2196F3;
+    }
+
+    li a:hover {
+      color: #0b8cc4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Items</h1>
+  <div class="container">
+    <a href="/add" class="add-button">Add New Item</a>
+    <ul>
+      <% items.forEach(item => { %>
+        <li>
+          <div>
+            <strong><%= item.name %></strong>: <%= item.description %>
+          </div>
+          <div>
+            <a href="/edit/<%= item._id %>">Edit</a>
+            <a href="/delete/<%= item._id %>">Delete</a>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
