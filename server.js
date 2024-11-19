@@ -36,7 +36,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Connect to MongoDB
 // Connect to MongoDB (Cloud)
 mongoose.connect('mongodb+srv://newuser:newuser@cluster0.ffpaa.mongodb.net/crudApp?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true
+  useUnifiedTopology: true;
 })
   .then(() => {
     console.log("MongoDB connected successfully to the cloud.");
