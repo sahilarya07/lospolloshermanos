@@ -35,16 +35,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Connect to MongoDB
 // Connect to MongoDB (Cloud)
-mongoose.connect('mongodb+srv://newuser:newuser@cluster0.ffpaa.mongodb.net/crudApp?retryWrites=true&w=majority&appName=Cluster0', {
-    useNewUrlParser: true,
-})
+mongoose.connect('mongodb+srv://newuser:newuser@cluster0.ffpaa.mongodb.net/crudApp?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => {
     console.log("MongoDB connected successfully to the cloud.");
   })
   .catch(err => {
     console.log("MongoDB connection error:", err);
   });
-
 
 // Create a Schema for Data
 const itemSchema = new mongoose.Schema({
